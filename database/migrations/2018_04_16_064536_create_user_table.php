@@ -19,6 +19,7 @@ class CreateUserTable extends Migration
             $table->string('user_tel');
             $table->char('user_pwd', 32);
             $table->string('user_sign')->nullable()->comment('用来标记超级管理员与普通老师');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

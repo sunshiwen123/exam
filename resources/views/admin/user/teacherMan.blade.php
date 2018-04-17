@@ -30,8 +30,9 @@
 									<td>老师名称</td>
 									<td>编辑</td>
 								</tr>
+								@foreach($List as $v)
 								<tr>
-									<td>admin</td>
+									<td>{{$v->user_name}}</td>
 									<td>
 									<a href="sys_add.html" class="btn btn-success">
 									  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 编辑
@@ -41,17 +42,7 @@
 									</a>
 									</td>
 								</tr>
-								<tr>
-									<td>3stones</td>
-									<td>
-									<a href="sys_add.html" class="btn btn-success">
-									  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 编辑
-									</a>
-									<a href="sys_add.html" class="btn btn-info">
-									  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 删除该用户
-									</a>
-									</td>
-								</tr>
+								@endforeach
 							</table>
 					</div>
 				</div>

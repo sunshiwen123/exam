@@ -25,7 +25,9 @@ Route::get('/teacherMan', 'UserController@teacherMan');//老师管理页面
 
 Route::get('/resetPwd', 'UserController@resetPwd');//账号管理
 
-Route::get('/addTeacher', 'UserController@addTeacher22');//添加老师
+Route::get('/addTeacher', 'UserController@addTeacher');//展示添加老师的页面
+
+Route::post('/addTeacherSubmit', 'UserController@addTeacherSubmit');//处理老师数据
 
 
 //科目路由开始

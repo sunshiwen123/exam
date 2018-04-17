@@ -22,30 +22,33 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="panel-heading">添加用户</div>
+						<form role="form" action="addTeacherSubmit" method="post">
+							<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 							<table class="formtable">
 								<tr>
 									<td align="right">老师名称</td>
 									<td>
-										<input id="name" name="name" type="text" placeholder="用户名" class="form-control">
+										<input id="name" name="userName" type="text" placeholder="用户名" class="form-control">
 									</td>
 									<td align="right">老师电话</td>
 									<td>
-										<input id="name" name="name" type="text" placeholder="电话" class="form-control">
+										<input id="name" name="userTel" type="text" placeholder="电话" class="form-control">
 									</td>
 									<td align="right">登录密码</td>
 									<td>
-										<input id="pass" name="pass" type="text" placeholder="密码" class="form-control">
+										<input id="pass" name="userPwd" type="password" placeholder="密码" class="form-control">
 									</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td>
-										<button type="button" class="btn btn-primary btn-sm">
+										<button type="submit" class="btn btn-primary btn-sm">
 										  <span class="glyphicon glyphicon-add" aria-hidden="true"></span>添加
 										</button>
 									</td>
 								</tr>
 							</table>
+						</form>
 					</div>
 				</div>
 			</div>
