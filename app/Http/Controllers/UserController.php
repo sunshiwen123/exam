@@ -38,7 +38,11 @@ class UserController extends Controller
 
 	//老师管理
 	public function teacherMan(){
-		return view('admin.user.teacherMan');
+		//获取老师列表
+		$user = new User();
+		$data = $user->where('user_sign', '0')->get();
+		// dd($data);
+		return view('admin.user.teacherMan', ['List' => $data]);
 	}
 
 	//账号管理
@@ -49,6 +53,20 @@ class UserController extends Controller
 	//展示添加老师页面
 	public function addTeacher(){
 		return view('admin.user.addTeacher');
+	}
+
+	//处理老师数据
+	public function addTeacherSubmit( Request $request ){
+		$data    = $request->all();
+		$userPwd = md5($data['userPwd']);
+		$user    = new User();
+		$user->user_name = $data['userName'];
+		$user->user_tel  = $data['userTel'];
+		$user->user_pwd  = $userPwd;
+		$user->user_sign = 0;
+		$user->save();
+		return redirect('teacherMan');
+		// dd($data);
 	}
 
 }
