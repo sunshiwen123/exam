@@ -51,7 +51,7 @@ Route::get('/delSub','SubjectController@del');//删除科目
 
 //题目分类路由开始
 Route::get('/qcList', 'QcController@index');//题目分类列表首页
-
+Route::get('/qcListsss', 'QcController@index');//题目分类列表首页
 Route::post('/qcSelect', 'QcController@select');//题目分类列表搜索
 
 Route::get('/addQc','QcController@addQc');//展示添加分类的页面
